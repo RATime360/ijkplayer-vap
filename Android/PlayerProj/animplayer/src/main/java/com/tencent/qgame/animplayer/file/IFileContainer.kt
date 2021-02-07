@@ -16,10 +16,13 @@
 package com.tencent.qgame.animplayer.file
 
 import android.media.MediaExtractor
+import tv.danmaku.ijk.media.player.IjkMediaPlayer
 
 interface IFileContainer {
 
     fun setDataSource(extractor: MediaExtractor)
+
+    fun setDataSource(ijkdecoder: IjkMediaPlayer)
 
     fun startRandomRead()
 

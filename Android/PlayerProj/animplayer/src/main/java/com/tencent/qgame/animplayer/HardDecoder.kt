@@ -110,6 +110,7 @@ class HardDecoder(player: AnimPlayer) : Decoder(player), SurfaceTexture.OnFrameA
 
             render?.apply {
                 glTexture = SurfaceTexture(getExternalTexture()).apply {
+//                    setOnFrameAvailableListener(this@HardDecoder)
                     setOnFrameAvailableListener(this@HardDecoder)
                     setDefaultBufferSize(videoWidth, videoHeight)
                 }
@@ -280,6 +281,9 @@ class HardDecoder(player: AnimPlayer) : Decoder(player), SurfaceTexture.OnFrameA
         }
     }
 
+    override fun stop(){
+        isStopReq =true
+    }
 
     override fun destroy() {
         needDestroy = true

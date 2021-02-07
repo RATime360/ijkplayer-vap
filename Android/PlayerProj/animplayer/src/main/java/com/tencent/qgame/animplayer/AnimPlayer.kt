@@ -58,7 +58,7 @@ class AnimPlayer(val animView: IAnimView) {
     fun onSurfaceTextureDestroyed() {
         isSurfaceAvailable = false
         decoder?.destroy()
-        audioPlayer?.destroy()
+//        audioPlayer?.destroy()
     }
 
     fun onSurfaceTextureAvailable(width: Int, height: Int) {
@@ -116,7 +116,7 @@ class AnimPlayer(val animView: IAnimView) {
 
     fun stopPlay() {
         decoder?.stop()
-        audioPlayer?.stop()
+//        audioPlayer?.stop()
     }
 
     fun isRunning(): Boolean {
@@ -127,16 +127,16 @@ class AnimPlayer(val animView: IAnimView) {
 
     private fun prepareDecoder() {
         if (decoder == null) {
-            decoder = HardDecoder(this).apply {
+            decoder = ijkDecoder(this).apply {
                 playLoop = this@AnimPlayer.playLoop
                 fps = this@AnimPlayer.fps
             }
         }
-        if (audioPlayer == null) {
-            audioPlayer = AudioPlayer(this).apply {
-                playLoop = this@AnimPlayer.playLoop
-            }
-        }
+//        if (audioPlayer == null) {
+//            audioPlayer = AudioPlayer(this).apply {
+//                playLoop = this@AnimPlayer.playLoop
+//            }
+//        }
     }
 
     fun updateMaskConfig(maskConfig: MaskConfig?) {

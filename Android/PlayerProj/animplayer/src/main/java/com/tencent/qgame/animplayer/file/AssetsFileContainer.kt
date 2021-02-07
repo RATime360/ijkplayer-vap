@@ -20,6 +20,7 @@ import android.content.res.AssetManager
 import android.media.MediaExtractor
 import com.tencent.qgame.animplayer.Constant
 import com.tencent.qgame.animplayer.util.ALog
+import tv.danmaku.ijk.media.player.IjkMediaPlayer
 
 class AssetsFileContainer(assetManager: AssetManager, assetsPath: String): IFileContainer {
 
@@ -40,6 +41,14 @@ class AssetsFileContainer(assetManager: AssetManager, assetsPath: String): IFile
             extractor.setDataSource(assetFd.fileDescriptor)
         } else {
             extractor.setDataSource(assetFd.fileDescriptor, assetFd.startOffset, assetFd.declaredLength)
+        }
+    }
+
+    override fun setDataSource(ijkmediaplayer: IjkMediaPlayer) {
+        if (assetFd.declaredLength < 0) {
+            ijkmediaplayer.setDataSource(assetFd.fileDescriptor)
+        } else {
+            ijkmediaplayer.setDataSource(assetFd.fileDescriptor)
         }
     }
 

@@ -18,6 +18,7 @@ package com.tencent.qgame.animplayer.file
 import android.media.MediaExtractor
 import com.tencent.qgame.animplayer.Constant
 import com.tencent.qgame.animplayer.util.ALog
+import tv.danmaku.ijk.media.player.IjkMediaPlayer
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.RandomAccessFile
@@ -37,6 +38,12 @@ class FileContainer(private val file: File) : IFileContainer {
 
     override fun setDataSource(extractor: MediaExtractor) {
         extractor.setDataSource(file.toString())
+    }
+    override fun setDataSource(ijkdecoder: IjkMediaPlayer){
+
+        val file = this.file
+        ijkdecoder.dataSource = file.toString()
+
     }
 
     override fun startRandomRead() {
