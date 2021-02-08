@@ -6,6 +6,7 @@ VAP（Video Animation Player）是企鹅电竞开发，用于播放酷炫动画�
 
 * 相比Webp, Apng动图方案，具有高压缩率(素材更小)、硬件解码(解码更快)的优点
 * 相比Lottie，能实现更复杂的动画效果(比如粒子特效)
+* 增加ijk播放器作为解码内核，机型适配能力更好，支持软解码
 
 
 项目详细介绍请参考 [Introduction.md](./Introduction.md)
@@ -33,7 +34,7 @@ GIF|4.6M|软解|只支持8位色彩
 Apng|10.6M|软解|全支持
 Webp|9.2M|软解|全支持
 mp4|1.5M|硬解|无透明背景
-VAP|***1.5M***|***硬解***|***全支持***
+VAP|***1.5M***|***硬解/ijk软解码***|***全支持***
 
 
 实验参数参考 [Introduction.md](./Introduction.md)
