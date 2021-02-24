@@ -2,11 +2,13 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://opensource.org/licenses/MIT)
 
-VAP（Video Animation Player）是企鹅电竞开发，用于播放酷炫动画的实现方案。
+VAP（Video Animation Player）是企鹅电竞开发，用于播放酷炫动画/大礼物的实现方案。
 
 * 相比Webp, Apng动图方案，具有高压缩率(素材更小)、硬件解码(解码更快)的优点
 * 相比Lottie，能实现更复杂的动画效果(比如粒子特效)
 * 增加ijk播放器作为解码内核，机型适配能力更好，支持软解码
+* 可以用于直播礼物播放/短视频特效预览
+* 基于ijk硬解码的实现正在开发中，敬请期待
 
 
 项目详细介绍请参考 [Introduction.md](./Introduction.md)
