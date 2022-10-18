@@ -98,17 +98,6 @@ interface OnResourceClickListener {
 
 ### 引入方式
 
-maven方式引入
-
-```gradle
-repositories {
-    jcenter()
-}
-
-dependencies {
-    implementation "com.egame.vap:animplayer:2.0.15"
-}
-```
 
 aar引入
 
